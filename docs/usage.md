@@ -1,21 +1,35 @@
-Updating
----
+Using `nix-bitcoin`
+===
+
+- [Updating nix-bitcoin](#updating)
+- [Viewing node information](#nodeinfo)
+- [Spark wallet](#spark-wallet)
+- [Electrs (electrum server)](#electrs)
+- [SSH over tor](#ssh-tor)
+- [Use with Trezor](#trezor)
+- [Joinmarket](#joinmarket)
+- [clightning](#clightning)
+
+<a name="updating"/> Updating
+===
 In your deployment directory, enter the nix shell with `nix-shell` and run
 
 ```
 fetch-release > nix-bitcoin-release.nix
 ```
 
-Nodeinfo
----
+<a name="nodeinfo"/> Nodeinfo
+===
 Run `nodeinfo` to see your onion addresses for the webindex, spark, etc. if they are enabled.
 
-Connect to spark-wallet
----
+<a name="spark-wallet"/> Connect to spark-wallet
+===
 ### Requirements
 * Android phone
 * [Orbot](https://guardianproject.info/apps/orbot/) installed from [F-Droid](https://guardianproject.info/fdroid) (recommended) or [Google Play](https://play.google.com/store/apps/details?id=org.torproject.android&hl=en)
 * [Spark-wallet](https://github.com/shesek/spark-wallet) installed from [direct download](https://github.com/shesek/spark-wallet/releases) or [Google Play](https://play.google.com/store/apps/details?id=com.spark.wallet)
+
+----
 
 1. Enable spark-wallet in `configuration.nix`
 
@@ -58,16 +72,18 @@ Connect to spark-wallet
     Done
     ```
 
-Connect to electrs
----
-### Requirements Android
+<a name="electrs"/> Connect to electrs
+===
+### Requirements: Android
 * Android phone
 * [Orbot](https://guardianproject.info/apps/orbot/) installed from [F-Droid](https://guardianproject.info/fdroid) (recommended) or [Google Play](https://play.google.com/store/apps/details?id=org.torproject.android&hl=en)
 * [Electrum mobile app](https://electrum.org/#home) 4.0.1 and newer installed from [direct download](https://electrum.org/#download) or [Google Play](https://play.google.com/store/apps/details?id=org.electrum.electrum)
 
-### Requirements Desktop
+### Requirements: Desktop
 * [Tor](https://www.torproject.org/) installed from [source](https://www.torproject.org/docs/tor-doc-unix.html.en) or [repository](https://www.torproject.org/docs/debian.html.en)
 * [Electrum](https://electrum.org/#download) installed
+
+----
 
 1. Enable electrs in `configuration.nix`
 
@@ -110,8 +126,8 @@ Connect to electrs
     Network > Server: <ELECTRS_ONION>:50001:t
     ```
 
-Connect to nix-bitcoin node through ssh Tor Hidden Service
----
+<a name="ssh-tor"/> Connect to nix-bitcoin node through ssh Tor Hidden Service
+===
 1. Run `nodeinfo` on your nix-bitcoin node and note the `SSHD_ONION`
 
     ```
@@ -155,8 +171,8 @@ Connect to nix-bitcoin node through ssh Tor Hidden Service
 
 6. Now you can run `nixops deploy -d bitcoin-node` and it will connect through the ssh tunnel you established in step iv. This also allows you to do more complex ssh setups that `nixops ssh` doesn't support. An example would be authenticating with [Trezor's ssh agent](https://github.com/romanz/trezor-agent), which provides extra security.
 
-Initialize a Trezor for Bitcoin Core's Hardware Wallet Interface
----
+<a name="trezor"/> Initialize a Trezor for Bitcoin Core's Hardware Wallet Interface
+===
 
 1. Enable Trezor in `configuration.nix`
 
@@ -222,8 +238,8 @@ Initialize a Trezor for Bitcoin Core's Hardware Wallet Interface
 
 8. Follow Bitcoin Core's instructions on [Using Bitcoin Core with Hardware Wallets](https://github.com/bitcoin-core/HWI/blob/master/docs/bitcoin-core-usage.md) to use your Trezor with `bitcoin-cli` on your nix-bitcoin node
 
-JoinMarket
----
+<a name="joinmarket"/> JoinMarket
+===
 
 ## Diff to regular JoinMarket usage
 
@@ -339,8 +355,8 @@ See [here](https://github.com/JoinMarket-Org/joinmarket-clientserver/blob/master
 
 3. Profit
 
-clightning
----
+<a name="clightning"/> clightning
+===
 
 ## Plugins
 

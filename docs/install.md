@@ -1,10 +1,11 @@
 Preliminary steps
----
+===
 Get a machine to deploy nix-bitcoin on.
 This could be a VirtualBox, a machine that is already running [NixOS](https://nixos.org/nixos/manual/index.html) or a cloud provider.
 Have a look at the options in the [NixOps manual](https://nixos.org/nixops/manual/).
 
-# Tutorials
+Tutorials
+---
 1. [Install and configure NixOS for nix-bitcoin on VirtualBox](#tutorial-install-and-configure-nixos-for-nix-bitcoin-on-virtualbox)
 2. [Install and configure NixOS for nix-bitcoin on VirtualBox (macOS host)](#tutorial-install-and-configure-nixos-for-nix-bitcoin-on-virtualbox-macOS-host)
 3. [Install and configure NixOS for nix-bitcoin on your own hardware](#tutorial-install-and-configure-nixos-for-nix-bitcoin-on-your-own-hardware)
@@ -12,7 +13,7 @@ Have a look at the options in the [NixOps manual](https://nixos.org/nixops/manua
 ----
 
 Tutorial: install and configure NixOS for nix-bitcoin on VirtualBox
----
+===
 ## 1. VirtualBox installation
 
 1. Add virtualbox.list to /etc/apt/sources.list.d (Debian 9 stretch)
@@ -156,7 +157,7 @@ To resize the VM disk image, you can use this helper script from within nix-shel
 ----
 
 Tutorial: install and configure NixOS for nix-bitcoin on VirtualBox (macOS host)
----
+===
 ## 1. VirtualBox installation (macOS)
 
 1. Download and install VirtualBox
@@ -201,7 +202,7 @@ Follow the instructions from [Nixops deployment on debian](#3-nixops-deployment)
 ----
 
 Tutorial: install and configure NixOS for nix-bitcoin on your own hardware
----
+===
 
 ## 0. Preparation
 

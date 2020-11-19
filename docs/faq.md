@@ -8,12 +8,12 @@
     ```
     root@xxx.xxx.xxx.xxx: Permission denied (publickey,password,keyboard-interactive).
     ```
-    Make sure you don't have something like
-    ```
-    Host *
-        PubkeyAuthentication no
-    ```
-    in your ssh config.
+    * **A:** Make sure you don't have something like
+        ```
+        Host *
+            PubkeyAuthentication no
+        ```
+        in your ssh config.
 * **Q:** When deploying to virtualbox for the first time I see
     ```
     bitcoin-node> Mar 19 09:22:27 bitcoin-node systemd[1]: Started Get NixOps SSH Key.
